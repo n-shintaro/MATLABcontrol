@@ -1,0 +1,17 @@
+clear
+close all
+
+%% ŒP—ûŒ‹‰Ê‚Ì“Ç‚İ‚İ
+load nn_controller.mat
+data=csvread('test.csv');
+Xnn=zeros(255,4);
+Tnn=zeros(255,2);
+for i=1:255
+    Xnn(i,:)=[data(i,1),data(i,2),data(i+1,1),data(i+1,2)];
+    Tnn(i,:)=data(i+2,:);
+end
+Ynn = sim(net,Xnn');
+figure(1)
+YT=Ynn'
+plot(1:255,YT(:,1),Tnn())
+grid on
