@@ -2,13 +2,13 @@ clear all
 clc
 %% data‚Ì“Ç‚İ‚Ş
 N=5 %@NŒÂæ‚ğ—\‘ª
-Xnn=zeros(390-2*N,N*2);
-Tnn=zeros(390-2*N,N*2);
+Xnn=zeros(388,N*2);
+Tnn=zeros(388,N*2);
 data=csvread('data.csv');
 for i=1:390-N
     for j=1:N
-        Xnn(i,j)=data(i+j*2-2,:);
-        Tnn(i,j)=data(i+j*2-1,:);
+        Xnn(i,j*2-1)=data(i+j*2-2,:);
+        Tnn(i,2*j)=data(i+j*2-1,:);
      end
 end
 %% network‚Ì\¬

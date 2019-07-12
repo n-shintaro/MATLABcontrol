@@ -16,5 +16,7 @@ T=1:255;
 grid on
 figure(1)
 plot(T,Ynn(1,:),T,Tnn(:,1)')
+figure(2)
+plot(T,Ynn(2,:),T,Tnn(:,2)')
 % figure(2)
 % plot(T,Tnn(:,1)')
