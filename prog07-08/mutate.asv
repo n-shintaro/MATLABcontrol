@@ -1,0 +1,14 @@
+% mutate.m
+%“Ë‘R•ÏˆÙ
+function d=mutate(offs,mutprop)%uniform mutation.
+global  bound rng
+[pops,numvar]=size(offs);
+%“Ë‘R•ÏˆÙ‚·‚é”
+mut=round(mutprop*pops*numvar)
+
+for i=1:mut
+    x=ceil(rand*pops)
+    y=ceil(rand*numvar)
+    offs(x,y)=bound(y,1)+rand*rng(y);
+end
+d=offs
